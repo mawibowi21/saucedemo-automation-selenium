@@ -23,11 +23,14 @@ describe('SauceDemo automation test', function () {
             await driver.findElement(By.xpath("//select[@data-test='product-sort-container']")).click();
             await driver.findElement(By.xpath("//option[@value='az']")).click();
             await driver.sleep(1500);
+            
+            const title = await driver.findElement(By.className('title')).getText();
+            assert.strictEqual(title, 'Products'); 
+            console.log("Login verified");
 
         } catch (error) {
             console.log("Ada error:", error);
         } finally {
-            await driver.quit();
-        }
+            await driver.quit();}
     });
 });
