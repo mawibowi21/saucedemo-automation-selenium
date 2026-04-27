@@ -4,12 +4,16 @@ const assert = require('assert');
 let options = new chrome.Options();
 describe('SauceDemo automation test', function () {
     let driver;
+    //hook sblm semua dimulai
+    before(async function () {
+        driver = await new Builder().forBrowser('chrome').build();
+    });
+    //hook setelah
+    after(async function () {
+        await driver.quit();
+    });
 
     it('logs in with standard_user using XPath locators', async function () {
-        driver = await new Builder()
-            .forBrowser('chrome')
-            .setChromeOptions(options)
-            .build();
         try { //login
             await driver.get('https://www.saucedemo.com');
             await driver.findElement(By.id("user-name")).sendKeys("standard_user");
@@ -30,7 +34,6 @@ describe('SauceDemo automation test', function () {
 
         } catch (error) {
             console.log("Ada error:", error);
-        } finally {
-            await driver.quit();}
+        }
     });
 });
