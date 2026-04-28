@@ -1,0 +1,195 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-04-28T03:48:35.971Z",
+    "end": "2026-04-28T03:48:51.255Z",
+    "duration": 15284,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "45c23392-5fbd-4334-a840-140ac49baecd",
+      "title": "",
+      "fullFile": "C:\\Users\\Lenovo\\OneDrive\\Documents\\explorer\\test\\specs\\login.test.js",
+      "file": "\\test\\specs\\login.test.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "bc2a28b7-03f1-4cf6-ab31-7f7f22887af6",
+          "title": "Login",
+          "fullFile": "C:\\Users\\Lenovo\\OneDrive\\Documents\\explorer\\test\\specs\\login.test.js",
+          "file": "\\test\\specs\\login.test.js",
+          "beforeHooks": [
+            {
+              "title": "\"before each\" hook in \"Login\"",
+              "fullTitle": "Login \"before each\" hook in \"Login\"",
+              "timedOut": false,
+              "duration": 2315,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "driver = new Builder()\n    .forBrowser('chrome')\n    .build();\nloginAction = new LoginAction(driver);\nsharingAction = new SharingAction(driver);\nawait loginAction.openUrl('https://www.saucedemo.com/');",
+              "err": {},
+              "uuid": "d2459bd3-02a5-49cc-84e3-c7cb9de68ece",
+              "parentUUID": "bc2a28b7-03f1-4cf6-ab31-7f7f22887af6",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after each\" hook in \"Login\"",
+              "fullTitle": "Login \"after each\" hook in \"Login\"",
+              "timedOut": false,
+              "duration": 779,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await driver.quit();",
+              "err": {},
+              "uuid": "20017a1f-c965-48f4-8c4c-933e83f2f379",
+              "parentUUID": "bc2a28b7-03f1-4cf6-ab31-7f7f22887af6",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "Login with valid credential",
+              "fullTitle": "Login Login with valid credential",
+              "timedOut": false,
+              "duration": 840,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await loginAction.inputUsername('standard_user');\nawait loginAction.inputPassword('secret_sauce');\nawait loginAction.clickLoginButton();\nawait loginAction.assertLoginSuccess('Products');\nawait sharingAction.fullPageScreenshot('login_positive')",
+              "err": {},
+              "uuid": "965908e2-7f75-42cf-8f9f-39f8c8c36707",
+              "parentUUID": "bc2a28b7-03f1-4cf6-ab31-7f7f22887af6",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login with empty username",
+              "fullTitle": "Login Login with empty username",
+              "timedOut": false,
+              "duration": 366,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await loginAction.inputPassword('secret_sauce');\nawait loginAction.clickLoginButton();\nawait loginAction.assertLoginFailed('Epic sadface: Username is required');\nawait sharingAction.fullPageScreenshot('login_empty_username')",
+              "err": {},
+              "uuid": "f852de58-c8d2-46d2-8689-9c605387c1a9",
+              "parentUUID": "bc2a28b7-03f1-4cf6-ab31-7f7f22887af6",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login with empty password",
+              "fullTitle": "Login Login with empty password",
+              "timedOut": false,
+              "duration": 368,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await loginAction.inputUsername('standard_user');\nawait loginAction.clickLoginButton();\nawait loginAction.assertLoginFailed('Epic sadface: Password is required');\nawait sharingAction.fullPageScreenshot('login_empty_password');",
+              "err": {},
+              "uuid": "0cd42a15-74ff-40ec-8893-2bbf739ad99a",
+              "parentUUID": "bc2a28b7-03f1-4cf6-ab31-7f7f22887af6",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login with empty locked out user",
+              "fullTitle": "Login Login with empty locked out user",
+              "timedOut": false,
+              "duration": 976,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await loginAction.inputUsername('locked_out_user');\nawait loginAction.inputPassword('secret_sauce');\nawait loginAction.clickLoginButton();\nawait loginAction.assertLoginFailed('Epic sadface: Sorry, this user has been locked out.');\n\nawait sharingAction.fullPageScreenshot('login_locked_out_user');",
+              "err": {},
+              "uuid": "a10b6d78-4393-4abb-a219-9a777d846064",
+              "parentUUID": "bc2a28b7-03f1-4cf6-ab31-7f7f22887af6",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "965908e2-7f75-42cf-8f9f-39f8c8c36707",
+            "f852de58-c8d2-46d2-8689-9c605387c1a9",
+            "0cd42a15-74ff-40ec-8893-2bbf739ad99a",
+            "a10b6d78-4393-4abb-a219-9a777d846064"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2550,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 60000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 60000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "11.7.5"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.3.2"
+    }
+  }
+}

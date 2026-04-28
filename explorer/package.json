@@ -1,0 +1,16 @@
+  {
+    "scripts": {
+    "test": "mocha test/specs/*.test.js --recursive --timeout 60000 --reporter mochawesome",
+    "login": "mocha test/specs/login.test.js --timeout 60000"
+
+  },
+  "dependencies": {
+    "pixelmatch": "^7.1.0",
+    "pngjs": "^7.0.0",
+    "selenium-webdriver": "^4.43.0"
+  },
+  "devDependencies": {
+    "mocha": "^11.7.5",
+    "mochawesome": "^7.1.4"
+  }
+}
