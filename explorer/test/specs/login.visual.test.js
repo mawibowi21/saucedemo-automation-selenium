@@ -55,5 +55,6 @@ describe('Login', () => {
         await loginAction.assertLoginFailed('Epic sadface: Sorry, this user has been locked out.');
         
         await sharingAction.fullPageScreenshot('login_locked_out_user');
+        await compareScreenshot(driver, 'negative_locked_out_user');
     });
 })
